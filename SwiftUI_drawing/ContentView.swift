@@ -7,15 +7,31 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Image("bg3")
+                .resizable()
+                .scaledToFill()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .ignoresSafeArea()
+                .opacity(0.5)
+            
+            OwlView(positionX: 160, positionY: 430)
+            NormalEyeView(positionX: 160, positionY: 430)
+            EyebrownView(positionX: 160, positionY: 430)
+            //StarryEyeView(positionX: 160, positionY: 430)
+            
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }

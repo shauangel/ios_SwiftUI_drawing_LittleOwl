@@ -14,6 +14,8 @@
 		4854B7542716B5A300990423 /* SwiftUI_drawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854B7532716B5A300990423 /* SwiftUI_drawingTests.swift */; };
 		4854B75E2716B5A300990423 /* SwiftUI_drawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854B75D2716B5A300990423 /* SwiftUI_drawingUITests.swift */; };
 		4854B7602716B5A300990423 /* SwiftUI_drawingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854B75F2716B5A300990423 /* SwiftUI_drawingUITestsLaunchTests.swift */; };
+		4854B76F271E973A00990423 /* OwlBodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854B76E271E973A00990423 /* OwlBodyParts.swift */; };
+		4854B771271EA7B100990423 /* OwlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4854B770271EA7B100990423 /* OwlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		4854B7592716B5A300990423 /* SwiftUI_drawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_drawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4854B75D2716B5A300990423 /* SwiftUI_drawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_drawingUITests.swift; sourceTree = "<group>"; };
 		4854B75F2716B5A300990423 /* SwiftUI_drawingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_drawingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4854B76E271E973A00990423 /* OwlBodyParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlBodyParts.swift; sourceTree = "<group>"; };
+		4854B770271EA7B100990423 /* OwlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +98,12 @@
 		4854B7412716B59F00990423 /* SwiftUI_drawing */ = {
 			isa = PBXGroup;
 			children = (
+				4854B76E271E973A00990423 /* OwlBodyParts.swift */,
 				4854B7422716B59F00990423 /* SwiftUI_drawingApp.swift */,
 				4854B7442716B59F00990423 /* ContentView.swift */,
 				4854B7462716B5A300990423 /* Assets.xcassets */,
 				4854B7482716B5A300990423 /* Preview Content */,
+				4854B770271EA7B100990423 /* OwlView.swift */,
 			);
 			path = SwiftUI_drawing;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4854B7452716B59F00990423 /* ContentView.swift in Sources */,
+				4854B771271EA7B100990423 /* OwlView.swift in Sources */,
 				4854B7432716B59F00990423 /* SwiftUI_drawingApp.swift in Sources */,
+				4854B76F271E973A00990423 /* OwlBodyParts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
