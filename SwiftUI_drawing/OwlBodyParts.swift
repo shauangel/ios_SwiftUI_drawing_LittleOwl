@@ -257,3 +257,16 @@ struct Star: Shape{
         }
     }
 }
+
+
+struct OwlBodyParts_LibraryContent: LibraryContentProvider {
+    var views: [LibraryItem] {
+        LibraryItem(OwlBody())
+        LibraryItem(TummyFur())
+        LibraryItem(FaceFur())
+        LibraryItem(Eyebrow())
+        LibraryItem(Beak())
+        LibraryItem(Feather())
+        LibraryItem(Star())
+    }
+}

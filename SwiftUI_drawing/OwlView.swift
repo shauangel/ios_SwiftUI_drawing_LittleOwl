@@ -7,6 +7,44 @@
 
 import SwiftUI
 
+//外框線
+struct OwlOutlineView: View{
+    var positionX: Double=0
+    var positionY: Double=0
+    var rotation: Double=0
+    var outlineColor: Color=Color.black
+    var outlineStyle: StrokeStyle=StrokeStyle(lineWidth:3)
+    
+    var body: some View {
+        //lines
+        OwlBody()
+            .stroke(outlineColor,style: outlineStyle)
+            .position(x: positionX, y: positionY)
+        
+        Beak()
+            .stroke(outlineColor, style: outlineStyle)
+            .position(x: positionX, y: positionY)
+        
+        Path{ path in
+            path.move(to: CGPoint(x: 257, y: 180))
+            path.addQuadCurve(to: CGPoint(x: 245, y: 196), control: CGPoint(x: 247, y: 199))
+            path.move(to: CGPoint(x: 281, y: 259))
+            path.addQuadCurve(to: CGPoint(x: 230.5, y: 221), control: CGPoint(x: 236, y: 303))
+            path.move(to: CGPoint(x: 124, y: 159))
+            path.addLine(to: CGPoint(x: 124, y: 166))
+            path.addLine(to: CGPoint(x: 130.5, y: 157))
+            path.addLine(to: CGPoint(x: 129.5, y: 166.5))
+            path.addLine(to: CGPoint(x: 140.5, y: 154.5))
+            path.addLine(to: CGPoint(x: 154, y: 169))
+            path.addLine(to: CGPoint(x: 156.5, y: 160.5))
+            path.addLine(to: CGPoint(x: 166, y: 165.5))
+            path.addLine(to: CGPoint(x: 165, y: 159))
+        }
+        .stroke(outlineColor, style: outlineStyle)
+        .position(x: positionX, y: positionY)
+    }
+}
+
 //貓頭鷹主要身體
 struct OwlView: View {
     var positionX: Double=0
@@ -16,6 +54,8 @@ struct OwlView: View {
     var furColor: Color=Color(red: 0.95, green: 0.95, blue: 0.96)
     var featherColor: Color=Color(red: 0.27, green: 0.27, blue: 0.27)
     var beakColor: Color=Color(red: 0.58, green: 0.60, blue: 0.62)
+    var outlineColor: Color=Color.black
+    var outlineStyle: StrokeStyle=StrokeStyle(lineWidth:3)
     
     var body: some View {
         
@@ -40,32 +80,7 @@ struct OwlView: View {
                 .fill(featherColor)
                 .position(x: positionX, y: positionY)
             
-            //lines
-            OwlBody()
-                .stroke(Color(red: 0, green: 0, blue: 0), lineWidth: 3)
-                .position(x: positionX, y: positionY)
-            
-            Beak()
-                .stroke(Color(red: 0, green: 0, blue: 0), lineWidth: 3)
-                .position(x: positionX, y: positionY)
-            
-            Path{ path in
-                path.move(to: CGPoint(x: 257, y: 180))
-                path.addQuadCurve(to: CGPoint(x: 245, y: 196), control: CGPoint(x: 247, y: 199))
-                path.move(to: CGPoint(x: 281, y: 259))
-                path.addQuadCurve(to: CGPoint(x: 230.5, y: 221), control: CGPoint(x: 236, y: 303))
-                path.move(to: CGPoint(x: 124, y: 159))
-                path.addLine(to: CGPoint(x: 124, y: 166))
-                path.addLine(to: CGPoint(x: 130.5, y: 157))
-                path.addLine(to: CGPoint(x: 129.5, y: 166.5))
-                path.addLine(to: CGPoint(x: 140.5, y: 154.5))
-                path.addLine(to: CGPoint(x: 154, y: 169))
-                path.addLine(to: CGPoint(x: 156.5, y: 160.5))
-                path.addLine(to: CGPoint(x: 166, y: 165.5))
-                path.addLine(to: CGPoint(x: 165, y: 159))
-            }
-            .stroke(Color(red: 0, green: 0, blue: 0), lineWidth: 3)
-            .position(x: positionX, y: positionY)
+            OwlOutlineView(positionX: positionX, positionY: positionY, outlineColor: outlineColor, outlineStyle:outlineStyle)
         }
     }
 }
@@ -225,4 +240,11 @@ struct StarryEyeView: View{
     }
 }
 
-
+struct OwlView_LibraryContent: LibraryContentProvider {
+    var views: [LibraryItem] {
+        LibraryItem(StarryEyeView())
+        LibraryItem(OwlView())
+        LibraryItem(EyebrowView())
+        LibraryItem(NormalEyeView())
+    }
+}
