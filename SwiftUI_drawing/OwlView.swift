@@ -71,7 +71,7 @@ struct OwlView: View {
 }
 
 //眉毛
-struct EyebrownView: View{
+struct EyebrowView: View{
     var positionX: Double=0
     var positionY: Double=0
     var rotation: Double=0
@@ -81,11 +81,11 @@ struct EyebrownView: View{
     var body: some View{
         
         ZStack{
-            Eyebrown()
+            Eyebrow()
                 .fill(bodyColor)
                 .position(x: positionX, y: positionY)
             
-            Eyebrown()
+            Eyebrow()
                 .stroke(Color(red: 0, green: 0, blue: 0), lineWidth: 3)
                 .position(x: positionX, y: positionY)
             
@@ -150,7 +150,6 @@ struct NormalEyeView: View{
             .position(x: positionX, y: positionY)
             
             //eyelash
-            
             Path{ path in
                 path.move(to: CGPoint(x: 82, y: 137))
                 path.addQuadCurve(to: CGPoint(x: 107, y: 115), control: CGPoint(x: 89, y: 108))
@@ -207,14 +206,17 @@ struct StarryEyeView: View{
                 .fill(Color(red: 1, green: 1, blue: 0.09))
                 .frame(width: 40, height: 60)
                 .position(x: 105, y: 290)
+            
             Star()
                 .fill(Color(red: 1, green: 1, blue: 0.09))
                 .frame(width: 40, height: 60)
                 .position(x: 186, y: 293)
+            
             Star()
                 .stroke(Color(red: 1, green: 0.78, blue: 0.27), lineWidth: 2)
                 .frame(width: 40, height: 60)
                 .position(x: 105, y: 290)
+            
             Star()
                 .stroke(Color(red: 1, green: 0.78, blue: 0.27), lineWidth: 2)
                 .frame(width: 40, height: 60)
@@ -222,3 +224,5 @@ struct StarryEyeView: View{
         }
     }
 }
+
+
